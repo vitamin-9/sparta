@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Webpage Title -->
+    <title>7-1 Homework_KMG</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- JQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .wrap {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 700px;
+            margin: auto;
+        }
+        .main-img{
+            width: 700px;
+        }
+
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin: 15px 0 5px 0;
+        }
+    </style>
+    
+    <script>
+        function check(){
+            let val1 = $('#name').val();
+            let val2 = $('#quantity option:selected').val();
+            let val3 = $('#address').val();
+            let val4 = $('#number').val();
+
+            
+            if(val1 ==""){
+                alert ('주문자 성함을 넣어주세요.')
+                $('#name').focus();
+            }
+            else if(val2 ==""){
+                alert ('수량을 넣어주세요.')
+                $('#quantity').focus();
+            }
+            else if(val3 ==""){
+                alert ('주소를 넣어주세요.')
+                $('#address').focus();
+            }
+            else if(typeof String.val3 !== 'function') {
+                String.val3 = function() {
+                   return /^(?:(010-?\d{4})|(01[1|6|7|8|9]-?\d{4}))-?\d{4}$/.test(this);
+                }
+                alert ('010-xxxx-xxxx 형태로 전화번호를 넣어주세요.')
+                $('#number').focus();
+            }
+            else{
+                alert ('Good!')
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <img class="main-img" src='https://www.bloter.net/wp-content/uploads/2020/02/spark.png'>
+        </div>
+
+        <h1>8주 완성 스파르타 코딩클럽 수강권 <span class="badge badge-secondary">New</span></h1>
+        <span class="badge badge-pill badge-light">
+            <h4>가격: 1,090,000원</h4>
+        </span>
+        <div class="alert alert-secondary" role="alert">
+            스파르타코딩클럽은 사전 경험이 전혀 없는 입문자를 위해 고안된 수업입니다. 짧고 굵게 배우고, 내 것을 만들면서 기본기를 다집니다. 8주 사이에 웹서비스의 작동 방식을 이해하고, 코딩 하는
+            사람으로서의
+            삶을 누리세요.
+        </div>
+
+        <div class="order">
+            <h1>주문하기</h1>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">주문자 성함</label>
+                <input id="name" type="text" class="form-control" placeholder="홍길동">
+            </div>
+        </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">수량</label>
+                <select id="quantity" class="form-control">
+                <option selected value>--수량을 선택하세요--</option>
+                    <script>
+                        for (let i=1; i<6; i++){
+                            document.write("<option>" + i + "</option>");
+                        }
+                    </script>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">주소</label>
+                <textarea id="address" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">전화번호</label>
+                <input id="number" type="phone" class="form-control" placeholder="000-0000-0000">
+                <!-- <script>
+                $('#number').bind("keyup", function(event) {
+                    var regNumber = /^[0-9]*$/;
+                    var temp = $("#" + id).val();
+                    if(!regNumber.test(temp))
+                    {
+                        console.log('숫자만 입력하세요');
+                        $('#number').val(temp.replace(/\B(?=(\d{3})+(?!\d))/g, "-"));
+                    }
+                });
+            </script> -->
+            </div>
+            <p>
+            </p>
+            <div class=button>
+                <button onclick="check()" class="btn btn-primary"> 주문하기</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
