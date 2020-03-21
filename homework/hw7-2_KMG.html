@@ -44,7 +44,7 @@
             let val2 = $('#quantity option:selected').val();
             let val3 = $('#address').val();
             let val4 = $('#number').val();
-
+            var phnumber =/(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
             
             if(val1 ==""){
                 alert ('주문자 성함을 넣어주세요.')
@@ -58,10 +58,7 @@
                 alert ('주소를 넣어주세요.')
                 $('#address').focus();
             }
-            else if(typeof String.val3 !== 'function') {
-                String.val3 = function() {
-                   return /^(?:(010-?\d{4})|(01[1|6|7|8|9]-?\d{4}))-?\d{4}$/.test(this);
-                }
+            else if(phnumber.test(val4)==false){
                 alert ('010-xxxx-xxxx 형태로 전화번호를 넣어주세요.')
                 $('#number').focus();
             }
